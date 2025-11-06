@@ -50,7 +50,7 @@ const projects = [
     title: "Portfolio",
     description: "This website! Built with HTML, CSS, and JavaScript.",
     image: "/assets/portfolioImg(new).png",
-    techTags: ["HTML", "CSS", "JavaScript"],
+    techTags: ["React", "Vite", "JavaScript XML"],
     links: [
       { url: "https://kjstatport.vercel.app//", label: "View Demo" },
       { url: "https://github.com/LavaToken/ReactPort", label: "Source Code" }
