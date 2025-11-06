@@ -48,7 +48,7 @@ const projects = [
   },
   {
     title: "Portfolio",
-    description: "This website! Built with HTML, CSS, and JavaScript.",
+    description: "This website! Built with React, Vite, and JavaScript XML.",
     image: "/assets/portfolioImg(new).png",
     techTags: ["React", "Vite", "JavaScript XML"],
     links: [
