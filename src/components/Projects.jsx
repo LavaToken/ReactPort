@@ -53,7 +53,7 @@ const projects = [
     techTags: ["HTML", "CSS", "JavaScript"],
     links: [
       { url: "https://kjstatport.vercel.app//", label: "View Demo" },
-      { url: "https://github.com/LavaToken/ReactPort", label: "Source Code" }
+      { url: "https://github.com/LavaToken/staticPort", label: "Source Code" }
     ]
   }
 ]
