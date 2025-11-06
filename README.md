@@ -1,4 +1,4 @@
-# Portfolio - React Version
+# Portfolio
 
 This is a React version of the portfolio website, built with Vite and React. This project is set up to utilize React Bits components for enhanced UI elements.
 
