@@ -43,7 +43,7 @@ const projects = [
     image: "/assets/BreathingMonitorImg.png",
     techTags: ["C++", "Arduino UNO", "ArduinoIDE"],
     links: [
-      { url: "#", label: "View Demo" }
+      { url: "#", label: "Demo in progress" }
     ]
   },
   {
