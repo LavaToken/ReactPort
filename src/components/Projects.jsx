@@ -31,6 +31,16 @@ const projects = [
     ]
   },
   {
+    title: "Steganography Web App",
+    description: "A website that allows users to hide messages within images using steganography. Users can upload an image and enter a message to hide within the image. The message is then hidden within the image and the user can download the hidden image. The website also allows users to extract messages from hidden images.",
+    image: "/assets/steganography-frontpage.png",
+    techTags: ["TypeScript", "React", "Node.js", "Express", "PostgreSQL"],
+    links: [
+      { url: "https://steganography-delta.vercel.app/", label: "Frontend Link" },
+      { url: "https://github.com/LavaToken/Steganography", label: "Source Code" }
+    ]
+  },
+  {
     title: "Digital Dice Game on FPGA",
     description: "Built a fully functional 21-roll dice game on the Intel DE10-Lite FPGA using Verilog. The game uses push-button input, seven-segment LED display output, and finite state machines to handle player turns, dice rolls, and win conditions. Features include hardware debouncing, clock division for timing control, and modular design for clean, scalable logic.",
     image: "/assets/fpgaupdater.png",
