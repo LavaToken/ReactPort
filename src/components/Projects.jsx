@@ -68,7 +68,13 @@ const projects = [
   },
   {
     title: "(Upcoming) AI Video Editing Clone)",
-    description: "A website that allows users to upload their own videos, alongside trending social media videos, and automatically edit based on the trend's style."
+    description: "A website that allows users to upload their own videos, alongside trending social media videos, and automatically edit based on the trend's style.",
+    image: "/assets/portfolioImg(new).png",
+    techTags: ["React", "Vite", "JavaScript XML"],
+    links: [
+      { url: "https://kjstatport.vercel.app//", label: "View Demo" },
+      { url: "https://github.com/LavaToken/ReactPort", label: "Source Code" }
+    ]
   }
 ]
 
