@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer-content">
-        <p>&copy; 2025 Kevin Jia. All rights reserved.</p>
+        <p>&copy; 2026 Kevin Jia. All rights reserved.</p>
         <div className="social-links">
           <a href="https://github.com/LavaToken" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-github"></i>
