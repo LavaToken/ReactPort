@@ -7,14 +7,16 @@ function About() {
   return (
     <section id="about" className="about" ref={sectionRef}>
       <div className="about-content">
-        <h2>About Me</h2>
         <div className="about-layout">
-          <div className="about-text">
-            <p>I'm a third year Computer Engineering major @ UC Davis currently working as a Data Analyst Intern at Travis Credit Union. As a passionate developer with expertise in both software and hardware development, I love creating innovative solutions and bringing exciting ideas to life!</p>
-            <p>In my free time, I enjoy photography shoots, speedcubing, and tinkering with mechanical keyboards.</p>
+          <div className="about-copy">
+            <h2>About Me</h2>
+            <div className="about-text">
+              <p>I'm a third year Computer Engineering major @ UC Davis currently working as a Data Analyst Intern at Travis Credit Union. As a passionate developer with expertise in both software and hardware development, I love creating innovative solutions and bringing exciting ideas to life!</p>
+              <p>In my free time, I enjoy photography shoots, speedcubing, and tinkering with mechanical keyboards.</p>
+            </div>
           </div>
           <div className="about-photo">
-            <img src="/assets/profile.png" alt="Profile photo" />
+            <img src="/assets/profilepic.png" alt="Profile picture" />
           </div>
         </div>
       </div>

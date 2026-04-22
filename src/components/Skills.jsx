@@ -2,10 +2,29 @@ import React from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
 const skills = {
-  "Programming Languages": ["Java", "Python", "C++", "C", "HTML", "CSS", "JavaScript", "TypeScript"],
-  "Hardware": ["Arduino", "Raspberry Pi", "STM32", "FPGA", "Quartus", "DE10-Lite Board", "Verilog", "PCB Design"],
-  "Tools & Technologies": ["Git", "Docker", "VSCode", "STM32IDE", "KiCAD", "OrCAD", "Firebase", "Figma"],
-  "Soft Skills": ["Problem Solving", "Team Collaboration", "Communication", "Time Management", "Adaptability", "Critical Thinking", "Leadership", "Attention to Detail"]
+  "Technical Skills": [
+    "TypeScript",
+    "JavaScript & JSX",
+    "React",
+    "React Native",
+    "Vite",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Firebase",
+    "REST APIs",
+    "OpenAI API",
+    "Google Earth Engine",
+    "Git",
+    "C",
+    "C++",
+    "STM32",
+    "Arduino",
+    "Verilog",
+    "Quartus",
+    "Python",
+    "Docker",
+  ],
 }
 
 function Skills() {
@@ -14,15 +33,22 @@ function Skills() {
   return (
     <section id="skills" className="skills" ref={sectionRef}>
       <h2>Skills & Technologies</h2>
-      <div className="skills-grid">
+      <div className="skills-grid skills-cloud">
         {Object.entries(skills).map(([category, items], index) => (
           <div key={index} className="skill-category">
-            <h3>{category}</h3>
-            <ul>
+            <div className="skill-category-header">
+              <span className="skill-category-label">{category}</span>
+            </div>
+            <div className="skill-pill-wrap">
               {items.map((item, itemIndex) => (
-                <li key={itemIndex}>{item}</li>
+                <span
+                  key={itemIndex}
+                  className={`skill-pill ${itemIndex % 6 === 0 || itemIndex % 6 === 3 ? 'skill-pill--lg' : 'skill-pill--sm'}`}
+                >
+                  {item}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>

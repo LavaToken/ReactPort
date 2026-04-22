@@ -86,18 +86,21 @@ function Projects() {
       <h2>My Projects</h2>
       <div className="project-grid">
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} index={index} />
         ))}
       </div>
     </section>
   )
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, index }) {
   const cardRef = useIntersectionObserver()
 
   return (
-    <div ref={cardRef} className="project-card">
+    <div
+      ref={cardRef}
+      className={`project-card${index === 0 ? ' featured' : ''}`}
+    >
       <div className="project-image">
         <img src={project.image} alt={`${project.title} Project`} />
       </div>
