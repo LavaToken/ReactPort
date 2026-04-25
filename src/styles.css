@@ -8,28 +8,50 @@
 /* Cursor Bubble */
 .cursor-bubble {
     position: fixed;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(30px) saturate(200%) brightness(1.2);
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.2);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(26px) saturate(220%) brightness(1.15);
+    -webkit-backdrop-filter: blur(26px) saturate(220%) brightness(1.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow: 
-        0 2px 12px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-        0 0 20px rgba(255, 255, 255, 0.1);
+        0 10px 26px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.18),
+        0 0 26px rgba(255, 255, 255, 0.14);
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease, transform 0.1s ease-out;
     will-change: transform;
     /* Ensure it stays within viewport on all screen sizes */
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 32px;
+    max-height: 32px;
     /* Liquid glass effect */
-    opacity: 0.05;
+    opacity: 0.18;
+}
+
+/* Fallback for browsers without backdrop-filter (common on Windows/Firefox). */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .cursor-bubble {
+        background: rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.18),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+}
+
+/* Windows High Contrast Mode: keep it visible. */
+@media (forced-colors: active) {
+    .cursor-bubble {
+        forced-color-adjust: none;
+        background: CanvasText;
+        border: 1px solid CanvasText;
+        box-shadow: none;
+        opacity: 0.35;
+    }
 }
 
 /* Hide cursor bubble on touch devices */

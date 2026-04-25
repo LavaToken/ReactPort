@@ -26,7 +26,7 @@ function Header() {
           </div>
           <div className="nav-buttons">
             <a 
-              href="https://docs.google.com/document/d/1T5Q3fOj5vwIeUG6gXJ_MeGLwLf-r9CiZx8slzoa4-Yg/edit?usp=sharing" 
+              href="https://docs.google.com/document/d/1LQC5YrZHLIYS4c5zitUuQ3uq37nd5rL9-VxeUFBXgJ0/edit?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-btn"
