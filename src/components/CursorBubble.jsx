@@ -1,31 +1,30 @@
 import React, { useEffect, useState, useRef } from 'react'
 
+/** Matches `styles.css` — touch-first / coarse-pointer devices hide the bubble. */
+const HIDE_BUBBLE_QUERY = '(hover: none) or (pointer: coarse)'
+
 function CursorBubble() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
-  const [isTouchDevice, setIsTouchDevice] = useState(false)
+  const [showBubble, setShowBubble] = useState(() =>
+    typeof window !== 'undefined' ? !window.matchMedia(HIDE_BUBBLE_QUERY).matches : false
+  )
   const rafRef = useRef(null)
 
   useEffect(() => {
-    // Detect if device supports touch
-    const checkTouchDevice = () => {
-      return (
-        'ontouchstart' in window ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0
-      )
-    }
+    const mq = window.matchMedia(HIDE_BUBBLE_QUERY)
+    const sync = () => setShowBubble(!mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
 
-    const touchDevice = checkTouchDevice()
-    setIsTouchDevice(touchDevice)
-
-    // Only set up cursor tracking for non-touch devices
-    if (touchDevice) {
-      return
+  useEffect(() => {
+    if (!showBubble) {
+      return undefined
     }
 
     const handleMouseMove = (e) => {
-      // Ensure coordinates are within viewport bounds
       const x = Math.max(0, Math.min(e.clientX, window.innerWidth))
       const y = Math.max(0, Math.min(e.clientY, window.innerHeight))
 
@@ -44,7 +43,6 @@ function CursorBubble() {
     }
 
     const handleResize = () => {
-      // Hide bubble when window is resized to prevent it from being off-screen
       setIsVisible(false)
     }
 
@@ -60,10 +58,9 @@ function CursorBubble() {
         cancelAnimationFrame(rafRef.current)
       }
     }
-  }, [])
+  }, [showBubble])
 
-  // Don't render on touch devices
-  if (isTouchDevice) {
+  if (!showBubble) {
     return null
   }
 
@@ -80,4 +77,3 @@ function CursorBubble() {
 }
 
 export default CursorBubble
-
