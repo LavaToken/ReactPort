@@ -11,7 +11,7 @@ function About() {
           <div className="about-copy">
             <h2>About Me</h2>
             <div className="about-text">
-              <p>I'm a third year Computer Engineering major @ UC Davis currently working as a Data Analyst Intern at Travis Credit Union. As a passionate developer with expertise in both software and hardware development, I love creating innovative solutions and bringing exciting ideas to life!</p>
+              <p>I'm a third year Computer Engineering major @ UC Davis currently working as a Data Analyst Intern at Travis Credit Union. As a passionate developer with expertise in software development, I love creating innovative solutions and bringing exciting ideas to life!</p>
               <p>In my free time, I enjoy photography shoots, speedcubing, and tinkering with mechanical keyboards.</p>
             </div>
           </div>
