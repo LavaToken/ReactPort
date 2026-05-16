@@ -1,50 +1,61 @@
 import React, { useEffect, useState } from 'react'
 
+const LINKS = [
+  { href: '#about',    label: 'About'   },
+  { href: '#projects', label: 'Work'    },
+  { href: '#skills',   label: 'Skills'  },
+  { href: '#contact',  label: 'Contact' },
+]
+
 function Header() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const hero = document.querySelector('.hero')
-      if (hero) {
-        const heroHeight = hero.offsetHeight
-        const scrollThreshold = heroHeight * 0.8
-        setIsVisible(window.scrollY > scrollThreshold)
-      }
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
     }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const close = () => setOpen(false)
 
   return (
-    <header className={isVisible ? 'visible' : ''}>
-      <nav>
-        <div className="nav-content">
-          <div className="logo">
-            <a href="#home">Kevin Jia</a>
-          </div>
-          <div className="nav-buttons">
-            <a 
-              href="https://docs.google.com/document/d/1LQC5YrZHLIYS4c5zitUuQ3uq37nd5rL9-VxeUFBXgJ0/edit?usp=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="resume-btn"
-            >
-              Resume
-            </a>
-            <a 
-              href="https://www.amazon.com/photos/shared/yH1eG0HKTqyo7-iEKtYoVA.jBfIncrso6uFXPr6cexanX" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="photos-btn"
-            >
-              Photography
-            </a>
-          </div>
-        </div>
+    <>
+      <header className="header">
+        <a href="#home" className="header__logo" onClick={close}>
+          Kevin Jia
+        </a>
+        <button
+          type="button"
+          className="hamburger"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      <nav
+        id="mobile-menu"
+        className={`mobile-menu${open ? ' is-open' : ''}`}
+        aria-hidden={!open}
+      >
+        {LINKS.map((link) => (
+          <a key={link.href} href={link.href} onClick={close}>
+            {link.label}
+          </a>
+        ))}
+        <div className="mobile-menu__meta">[ Kevin Jia — Davis, CA ]</div>
       </nav>
-    </header>
+    </>
   )
 }
 

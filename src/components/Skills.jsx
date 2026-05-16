@@ -1,56 +1,52 @@
 import React from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
-const skills = {
-  "Technical Skills": [
-    "TypeScript",
-    "JavaScript & JSX",
-    "React",
-    "React Native",
-    "Vite",
-    "Node.js",
-    "Express",
-    "PostgreSQL",
-    "Firebase",
-    "REST APIs",
-    "OpenAI API",
-    "Google Earth Engine",
-    "Git",
-    "C",
-    "C++",
-    "STM32",
-    "Arduino",
-    "Verilog",
-    "Quartus",
-    "Python",
-    "Docker",
-  ],
-}
+const skillRows = [
+  {
+    label: 'Languages',
+    items: ['TypeScript', 'JavaScript', 'Python', 'C', 'C++', 'Verilog'],
+  },
+  {
+    label: 'Frameworks',
+    items: ['React', 'React Native', 'Vite', 'Node.js', 'Express'],
+  },
+  {
+    label: 'Data',
+    items: ['SQL', 'PostgreSQL', 'Google Analytics', 'Looker', 'A/B Testing', 'Excel'],
+  },
+  {
+    label: 'Infra',
+    items: ['Firebase', 'Docker', 'Git'],
+  },
+  {
+    label: 'Growth',
+    items: ['Content Strategy', 'SEO Basics', 'Funnel Analysis'],
+  },
+  {
+    label: 'APIs',
+    items: ['REST', 'OpenAI', 'Google Earth Engine'],
+  },
+]
 
 function Skills() {
   const sectionRef = useIntersectionObserver()
 
   return (
-    <section id="skills" className="skills" ref={sectionRef}>
-      <h2>Skills & Technologies</h2>
-      <div className="skills-grid skills-cloud">
-        {Object.entries(skills).map(([category, items], index) => (
-          <div key={index} className="skill-category">
-            <div className="skill-category-header">
-              <span className="skill-category-label">{category}</span>
+    <section id="skills" className="section" ref={sectionRef}>
+      <div className="grid">
+        <div className="section-header">
+          <span className="section-header__label">[ Stack ]</span>
+          <span className="section-header__index">003 / 004</span>
+        </div>
+
+        <div className="skills__list reveal">
+          {skillRows.map((row) => (
+            <div key={row.label} className="skill-row">
+              <span className="skill-row__label">{row.label}</span>
+              <span className="skill-row__items">{row.items.join(', ')}</span>
             </div>
-            <div className="skill-pill-wrap">
-              {items.map((item, itemIndex) => (
-                <span
-                  key={itemIndex}
-                  className={`skill-pill ${itemIndex % 6 === 0 || itemIndex % 6 === 3 ? 'skill-pill--lg' : 'skill-pill--sm'}`}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -5,18 +5,50 @@ function About() {
   const sectionRef = useIntersectionObserver()
 
   return (
-    <section id="about" className="about" ref={sectionRef}>
-      <div className="about-content">
-        <div className="about-layout">
-          <div className="about-copy">
-            <h2>About Me</h2>
-            <div className="about-text">
-              <p>I'm a third year Computer Engineering major @ UC Davis currently working as a Data Analyst Intern at Travis Credit Union. As a passionate developer with expertise in software development, I love creating innovative solutions and bringing exciting ideas to life!</p>
-              <p>In my free time, I enjoy photography shoots, speedcubing, and tinkering with mechanical keyboards.</p>
-            </div>
+    <section id="about" className="section" ref={sectionRef}>
+      <div className="grid">
+        <div className="section-header">
+          <span className="section-header__label">[ About ]</span>
+          <span className="section-header__index">001 / 004</span>
+        </div>
+
+        <div className="about__copy reveal">
+          <h2 className="about__heading">
+            Engineer who treats software like a craft.
+          </h2>
+          <div className="about__body">
+            <p>
+              I'm a Computer Engineering student at UC Davis with a focus
+              on full-stack development, data analytics, and building
+              products people actually use. I care about the intersection
+              of engineering and growth — writing clean code that ships
+              and measuring what happens after.
+            </p>
+            <p>
+              Outside of engineering, I run marketing and content for
+              Google Developer Student Club, shoot street and documentary
+              photography, and build mechanical keyboards. I like making
+              things — digital and physical.
+            </p>
           </div>
-          <div className="about-photo">
-            <img src="/assets/profilepic.png" alt="Profile picture" />
+        </div>
+
+        <div className="about__photo reveal">
+          <img src="/assets/profilepic.png" alt="Kevin Jia portrait" />
+        </div>
+
+        <div className="about__stats reveal">
+          <div className="about__stat">
+            <span className="about__stat-value">3rd</span>
+            <span className="about__stat-label">Year — UC Davis CE</span>
+          </div>
+          <div className="about__stat">
+            <span className="about__stat-value">8+</span>
+            <span className="about__stat-label">Shipped projects</span>
+          </div>
+          <div className="about__stat">
+            <span className="about__stat-value">San Jose</span>
+            <span className="about__stat-label">California, USA</span>
           </div>
         </div>
       </div>

@@ -1,55 +1,90 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+
+const ROLES = [
+  'Full Stack',
+  'Data Analytics',
+  'Growth Engineering',
+  'Product Thinking',
+  'Photography',
+]
+
+const TYPE_MS = 70
+const ERASE_MS = 40
+const HOLD_MS = 1400
 
 function Hero() {
-  const [displayedText, setDisplayedText] = useState('')
+  const [text, setText] = useState('')
+  const indexRef = useRef(0)
+  const phaseRef = useRef('typing')
+  const charRef = useRef(0)
+  const timeoutRef = useRef(null)
 
   useEffect(() => {
-    const text = "Hi, I'm Kevin"
-    let i = 0
-
-    const type = () => {
-      if (i < text.length) {
-        setDisplayedText(text.substring(0, i + 1))
-        i++
-        setTimeout(type, 80)
+    const tick = () => {
+      const word = ROLES[indexRef.current]
+      if (phaseRef.current === 'typing') {
+        const next = word.slice(0, charRef.current + 1)
+        setText(next)
+        charRef.current += 1
+        if (charRef.current === word.length) {
+          phaseRef.current = 'holding'
+          timeoutRef.current = setTimeout(tick, HOLD_MS)
+        } else {
+          timeoutRef.current = setTimeout(tick, TYPE_MS)
+        }
+      } else if (phaseRef.current === 'holding') {
+        phaseRef.current = 'erasing'
+        timeoutRef.current = setTimeout(tick, ERASE_MS)
+      } else if (phaseRef.current === 'erasing') {
+        if (charRef.current === 0) {
+          phaseRef.current = 'typing'
+          indexRef.current = (indexRef.current + 1) % ROLES.length
+          timeoutRef.current = setTimeout(tick, TYPE_MS)
+        } else {
+          charRef.current -= 1
+          setText(word.slice(0, charRef.current))
+          timeoutRef.current = setTimeout(tick, ERASE_MS)
+        }
       }
     }
-
-    type()
+    timeoutRef.current = setTimeout(tick, 400)
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    }
   }, [])
 
   return (
-    <section id="home" className="hero">
-      <div className="hero-content">
-        <h1 style={{
-          display: 'block',
-          fontSize: '3.5rem',
-          fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
-          fontWeight: 700,
-          letterSpacing: 'normal',
-          lineHeight: 1.2
-        }}>
-          <span className="highlight">{displayedText}</span>
-          <span id="typing-cursor"></span>
+    <section id="home" className="hero section">
+      <div className="grid hero__inner">
+        <div className="hero__role" aria-label="Current focus">
+          <span className="hero__role-bracket">[</span>
+          <span className="hero__role-value">{text}</span>
+          <span className="hero__role-caret" aria-hidden="true" />
+          <span className="hero__role-bracket">]</span>
+        </div>
+
+        <h1 className="hero__name">
+          <span>Kevin</span>
+          <span>Jia</span>
         </h1>
-        <p className="subtitle">Software & Hardware Developer</p>
-        <div className="cta-buttons">
-          <a 
-            href="https://docs.google.com/document/d/1LQC5YrZHLIYS4c5zitUuQ3uq37nd5rL9-VxeUFBXgJ0/edit?usp=sharing" 
-            className="btn primary" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-          <a 
-            href="https://www.amazon.com/photos/shared/yH1eG0HKTqyo7-iEKtYoVA.jBfIncrso6uFXPr6cexanX" 
-            className="btn secondary" 
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Photography
-          </a>
+
+        <div className="hero__rule" aria-hidden="true" />
+
+        <div className="hero__meta-left">
+          <strong>Computer Engineer</strong> — Davis, CA
+          <br />
+          UC Davis · Class of 2027
+        </div>
+
+        <p className="hero__pitch">
+          I build full-stack products and data pipelines — from React
+          frontends to backend APIs and analytics dashboards. Currently
+          a Data Analyst Intern at Travis Credit Union, with a focus on
+          growth and product.
+        </p>
+
+        <div className="hero__scroll">
+          <a href="#about">View Work ↓</a>
         </div>
       </div>
     </section>
