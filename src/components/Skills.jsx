@@ -36,7 +36,7 @@ function Skills() {
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Stack ]</span>
-          <span className="section-header__index">003 / 004</span>
+          <span className="section-header__index">004 / 005</span>
         </div>
 
         <div className="skills__list reveal">

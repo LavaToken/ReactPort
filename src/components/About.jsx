@@ -9,7 +9,7 @@ function About() {
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ About ]</span>
-          <span className="section-header__index">001 / 004</span>
+          <span className="section-header__index">001 / 005</span>
         </div>
 
         <div className="about__copy reveal">

@@ -117,7 +117,7 @@ function Projects() {
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Selected Work ]</span>
-          <span className="section-header__index">002 / 004</span>
+          <span className="section-header__index">002 / 005</span>
         </div>
 
         <div className="projects__list reveal">

@@ -692,6 +692,58 @@ main { padding-top: var(--strip-h); }
 }
 
 /* =========================================================
+   Creative
+   ========================================================= */
+.creative__copy {
+  grid-column: 1 / span 4;
+  align-self: start;
+}
+.creative__video {
+  grid-column: 6 / span 7;
+  align-self: start;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-dark);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.creative__video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.creative__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.creative__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+.creative__caption {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 60ch;
+  white-space: pre-line;
+}
+
+@media (max-width: 900px) {
+  .creative__copy  { grid-column: 1 / -1; margin-bottom: 2.5rem; }
+  .creative__video { grid-column: 1 / -1; }
+}
+
+/* =========================================================
    Skills (spec-sheet table)
    ========================================================= */
 .skills__list {

@@ -14,7 +14,7 @@ function Contact() {
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Contact ]</span>
-          <span className="section-header__index">004 / 004</span>
+          <span className="section-header__index">005 / 005</span>
         </div>
 
         <div className="contact__inner reveal">

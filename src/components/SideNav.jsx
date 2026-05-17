@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 const SECTIONS = [
-  { id: 'about',    label: 'About'   },
-  { id: 'projects', label: 'Work'    },
-  { id: 'skills',   label: 'Skills'  },
-  { id: 'contact',  label: 'Contact' },
+  { id: 'about',    label: 'About'    },
+  { id: 'projects', label: 'Work'     },
+  { id: 'creative', label: 'Creative' },
+  { id: 'skills',   label: 'Skills'   },
+  { id: 'contact',  label: 'Contact'  },
 ]
 
 function SideNav() {
