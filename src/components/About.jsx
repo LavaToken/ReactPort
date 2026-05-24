@@ -18,10 +18,10 @@ function About() {
           </h2>
           <div className="about__body">
             <p>
-              I'm a Computer Engineering student at UC Davis with a focus
+              I'm a Computer Science student at UC Davis with a focus
               on full-stack development, data analytics, and building
               products people actually use. I care about the intersection
-              of engineering and growth — writing clean code that ships
+              of engineering and growth management — writing clean code that ships
               and measuring what happens after.
             </p>
             <p>
