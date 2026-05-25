@@ -16,7 +16,7 @@ function Creative() {
         </div>
 
         <div className="creative__copy reveal">
-          <h2 className="creative__heading">Latest piece.</h2>
+          <h2 className="creative__heading">Latest clip.</h2>
           <p className="creative__subtitle">
             Not everything I make is code.
           </p>

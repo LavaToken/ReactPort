@@ -71,7 +71,7 @@ function Hero() {
         <div className="hero__rule" aria-hidden="true" />
 
         <div className="hero__meta-left">
-          <strong>Computer Engineer</strong> — Davis, CA
+          <strong>Computer Science Student</strong> — Davis, CA
           <br />
           UC Davis · Class of 2027
         </div>

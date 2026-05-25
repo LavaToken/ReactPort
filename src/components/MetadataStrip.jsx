@@ -25,7 +25,7 @@ function MetadataStrip() {
   return (
     <div className="meta-strip" role="banner">
       <div className="meta-strip__left">Kevin Jia</div>
-      <div className="meta-strip__center">UC Davis — Computer Engineering</div>
+      <div className="meta-strip__center">UC Davis — Computer Science</div>
       <div className="meta-strip__right">
         <a
           className="meta-strip__link"
