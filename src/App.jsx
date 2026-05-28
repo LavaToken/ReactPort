@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import MetadataStrip from './components/MetadataStrip'
 import Header from './components/Header'
 import SideNav from './components/SideNav'
@@ -25,6 +26,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </>
   )
 }

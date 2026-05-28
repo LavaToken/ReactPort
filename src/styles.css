@@ -737,6 +737,21 @@ main { padding-top: var(--strip-h); }
   max-width: 60ch;
   white-space: pre-line;
 }
+.creative__photos-link {
+  display: block;
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  text-decoration: none;
+  width: fit-content;
+  transition: text-decoration var(--t-fast) ease;
+}
+.creative__photos-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 @media (max-width: 900px) {
   .creative__copy  { grid-column: 1 / -1; margin-bottom: 2.5rem; }
