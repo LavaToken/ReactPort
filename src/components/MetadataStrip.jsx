@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const RESUME_URL =
-  'https://docs.google.com/document/d/1LQC5YrZHLIYS4c5zitUuQ3uq37nd5rL9-VxeUFBXgJ0/edit?usp=sharing'
+  'https://docs.google.com/document/d/1jIyBYGgwHdbalqo_ZQLSnzOqcqsGyzJVM8EHtnwwA8w/edit?usp=sharing'
 const PHOTOS_URL =
   'https://www.amazon.com/photos/shared/yH1eG0HKTqyo7-iEKtYoVA.jBfIncrso6uFXPr6cexanX'
 
