@@ -10,8 +10,11 @@ import Creative from './components/Creative'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { useParallax } from './hooks/useParallax'
 
 function App() {
+  useParallax()
+
   return (
     <>
       <MetadataStrip />

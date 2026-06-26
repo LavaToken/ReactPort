@@ -103,11 +103,15 @@ body {
 /* ---------- Section base ---------- */
 .section {
   position: relative;
+  overflow: hidden;
   padding-top: 6rem;
   padding-bottom: 6rem;
   border-top: 1px solid var(--border);
 }
 .section:first-of-type { border-top: none; }
+
+/* Real section content sits above the ghost number */
+.section > .grid { position: relative; z-index: 1; }
 
 .section--dark {
   background: var(--bg-dark);
@@ -892,6 +896,35 @@ main { padding-top: var(--strip-h); }
 @media (max-width: 600px) {
   .footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
+
+/* =========================================================
+   Ghost numbers (parallax background texture)
+   ========================================================= */
+.ghost-number {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20rem, 40vw, 48rem);
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  opacity: 0.045;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+.section--dark .ghost-number { color: var(--text-on-dark); }
 
 /* =========================================================
    Scroll-reveal animation (used by useIntersectionObserver)

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import GhostNumber from './GhostNumber'
 
 const RESUME_URL =
   'https://docs.google.com/document/d/1jIyBYGgwHdbalqo_ZQLSnzOqcqsGyzJVM8EHtnwwA8w/edit?usp=sharing'
@@ -11,6 +12,7 @@ function Contact() {
 
   return (
     <section id="contact" className="section" ref={sectionRef}>
+      <GhostNumber value="05" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Contact ]</span>

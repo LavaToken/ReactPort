@@ -1,11 +1,13 @@
 import React from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import GhostNumber from './GhostNumber'
 
 function About() {
   const sectionRef = useIntersectionObserver()
 
   return (
     <section id="about" className="section" ref={sectionRef}>
+      <GhostNumber value="01" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ About ]</span>

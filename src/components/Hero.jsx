@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import GhostNumber from './GhostNumber'
 
 const ROLES = [
   'Full Stack',
@@ -55,6 +56,7 @@ function Hero() {
 
   return (
     <section id="home" className="hero section">
+      <GhostNumber value="27" speed={0.22} />
       <div className="grid hero__inner">
         <div className="hero__role" aria-label="Current focus">
           <span className="hero__role-bracket">[</span>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import GhostNumber from './GhostNumber'
 
 const projects = [
   {
@@ -114,6 +115,7 @@ function Projects() {
 
   return (
     <section id="projects" className="section section--dark" ref={sectionRef}>
+      <GhostNumber value="02" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Selected Work ]</span>

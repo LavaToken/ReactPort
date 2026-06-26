@@ -1,5 +1,6 @@
 import React from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import GhostNumber from './GhostNumber'
 
 const VIDEO_URL = 'https://www.youtube.com/embed/uvMe7Z7_5-Q'
 const PHOTOS_URL = 'https://www.amazon.com/photos/shared/yH1eG0HKTqyo7-iEKtYoVA.jBfIncrso6uFXPr6cexanX'
@@ -10,6 +11,7 @@ function Creative() {
 
   return (
     <section id="creative" className="section" ref={sectionRef}>
+      <GhostNumber value="03" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Creative ]</span>

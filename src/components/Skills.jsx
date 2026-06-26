@@ -1,5 +1,6 @@
 import React from 'react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import GhostNumber from './GhostNumber'
 
 const skillRows = [
   {
@@ -33,6 +34,7 @@ function Skills() {
 
   return (
     <section id="skills" className="section" ref={sectionRef}>
+      <GhostNumber value="04" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Stack ]</span>
