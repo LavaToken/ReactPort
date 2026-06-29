@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const LINKS = [
-  { href: '#about',    label: 'About'   },
-  { href: '#projects', label: 'Work'    },
-  { href: '#skills',   label: 'Skills'  },
-  { href: '#contact',  label: 'Contact' },
+  { to: '/#about', label: 'About' },
+  { to: '/work', label: 'Projects' },
+  { to: '/#skills', label: 'Skills' },
+  { to: '/#contact', label: 'Contact' },
 ]
 
 function Header() {
@@ -26,9 +27,9 @@ function Header() {
   return (
     <>
       <header className="header">
-        <a href="#home" className="header__logo" onClick={close}>
+        <Link to="/" className="header__logo" onClick={close}>
           Kevin Jia
-        </a>
+        </Link>
         <button
           type="button"
           className="hamburger"
@@ -49,9 +50,9 @@ function Header() {
         aria-hidden={!open}
       >
         {LINKS.map((link) => (
-          <a key={link.href} href={link.href} onClick={close}>
+          <Link key={link.to} to={link.to} onClick={close}>
             {link.label}
-          </a>
+          </Link>
         ))}
         <div className="mobile-menu__meta">[ Kevin Jia — Davis, CA ]</div>
       </nav>

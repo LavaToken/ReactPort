@@ -1,22 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import GhostNumber from './GhostNumber'
 
 const RESUME_URL =
   'https://docs.google.com/document/d/1jIyBYGgwHdbalqo_ZQLSnzOqcqsGyzJVM8EHtnwwA8w/edit?usp=sharing'
-const PHOTOS_URL =
-  'https://www.amazon.com/photos/shared/yH1eG0HKTqyo7-iEKtYoVA.jBfIncrso6uFXPr6cexanX'
 
 function Contact() {
   const sectionRef = useIntersectionObserver()
 
   return (
     <section id="contact" className="section" ref={sectionRef}>
-      <GhostNumber value="05" speed={0.22} />
+      <GhostNumber value="04" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Contact ]</span>
-          <span className="section-header__index">005 / 005</span>
+          <span className="section-header__index">004 / 004</span>
         </div>
 
         <div className="contact__inner reveal">
@@ -47,9 +46,7 @@ function Contact() {
             <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">
               Resume ↗
             </a>
-            <a href={PHOTOS_URL} target="_blank" rel="noopener noreferrer">
-              Photography ↗
-            </a>
+            <Link to="/photography">Photography →</Link>
           </div>
         </div>
       </div>

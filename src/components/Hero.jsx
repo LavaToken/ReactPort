@@ -78,16 +78,7 @@ function Hero() {
           UC Davis · Class of 2027
         </div>
 
-        <p className="hero__pitch">
-          I build full-stack products and data pipelines — from React
-          frontends to backend APIs and analytics dashboards. Currently
-          a Data Analyst Intern at Travis Credit Union, with a focus on
-          growth and product.
-        </p>
-
-        <div className="hero__scroll">
-          <a href="#about">View Work ↓</a>
-        </div>
+        <p className="hero__pitch">Currently building Beaq</p>
       </div>
     </section>
   )

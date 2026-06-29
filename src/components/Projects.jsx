@@ -17,11 +17,36 @@ const projects = [
     ],
   },
   {
+    title: 'LLM on Trolley Problems',
+    year: '2025',
+    category: 'Data Analytics · Ethical AI',
+    description:
+      "A research tool comparing how GPT, Claude, and Grok navigate ethical dilemmas — running all three models in parallel across 34 standardized trolley-problem scenarios. Built a 5-axis scoring system to score responses on ethical reasoning, generating 170+ structured data points for bias analysis. Full-stack pipeline (React + Node/Express) handles prompt orchestration, structured JSON output, and data export.",
+    image: '/assets/trolleyProblemImg.png',
+    techTags: ['React', 'Node.js', 'Express', 'GPT', 'Claude', 'Grok'],
+    links: [
+      { url: 'PLACEHOLDER', label: 'Source' },
+    ],
+  },
+  {
+    title: 'Steganography Web App',
+    year: '2024',
+    category: 'Full-Stack Web',
+    description:
+      'A website that hides messages inside images using steganography. Users upload an image and a message, get back a downloadable encoded image, and can extract messages from encoded uploads later.',
+    image: '/assets/steganography-frontpage.png',
+    techTags: ['TypeScript', 'React', 'Node.js', 'Express', 'PostgreSQL'],
+    links: [
+      { url: 'https://steganography-delta.vercel.app/', label: 'Live' },
+      { url: 'https://github.com/LavaToken/Steganography', label: 'Source' },
+    ],
+  },
+  {
     title: 'Beaq',
     year: '2025',
     category: 'Mobile App · WIP',
     description:
-      'A mobile app that lets users create groups of friends, track locations, and propose activities for the group to do together.',
+      "A social app for coordinating spontaneous hangouts with friends — group creation, live location sharing, and AI-suggested activities based on group preferences. Built to explore how lightweight social friction (or the lack of it) affects whether plans actually happen.",
     image: '/assets/beaqLogo.png',
     techTags: ['TypeScript', 'React Native', 'Firebase', 'OpenAI', 'UI/UX'],
     links: [
@@ -39,62 +64,6 @@ const projects = [
     links: [
       { url: 'https://fsae.ucdavis.edu/', label: 'Team Site' },
     ],
-  },
-  {
-    title: 'Steganography Web App',
-    year: '2024',
-    category: 'Full-Stack Web',
-    description:
-      'A website that hides messages inside images using steganography. Users upload an image and a message, get back a downloadable encoded image, and can extract messages from encoded uploads later.',
-    image: '/assets/steganography-frontpage.png',
-    techTags: ['TypeScript', 'React', 'Node.js', 'Express', 'PostgreSQL'],
-    links: [
-      { url: 'https://steganography-delta.vercel.app/', label: 'Live' },
-      { url: 'https://github.com/LavaToken/Steganography', label: 'Source' },
-    ],
-  },
-  {
-    title: 'Digital Dice Game (FPGA)',
-    year: '2024',
-    category: 'Hardware · Verilog',
-    description:
-      'A fully functional 21-roll dice game on the Intel DE10-Lite FPGA, written in Verilog. Push-button input, seven-segment LED output, and finite state machines drive player turns, dice rolls, and win conditions. Includes hardware debouncing and clock division.',
-    image: '/assets/fpgaupdater.png',
-    techTags: ['Verilog', 'Quartus', 'DE10-Lite'],
-    links: [],
-  },
-  {
-    title: 'Breathing Monitor',
-    year: '2024',
-    category: 'Hardware · Arduino',
-    description:
-      'A device that helps users regulate their breathing using the 4-7-8 technique — supporting better sleep, lower stress, and respiratory health.',
-    image: '/assets/BreathingMonitorImg.png',
-    techTags: ['C++', 'Arduino UNO', 'Arduino IDE'],
-    links: [],
-    note: 'Demo in progress',
-  },
-  {
-    title: 'Portfolio',
-    year: '2026',
-    category: 'Web · Personal',
-    description: 'This site. React + Vite, no framework on top.',
-    image: '/assets/portfolioImg(new).png',
-    techTags: ['React', 'Vite', 'JSX'],
-    links: [
-      { url: 'https://github.com/LavaToken/ReactPort', label: 'Source' },
-    ],
-  },
-  {
-    title: 'AI Video Editing Clone',
-    year: '2026',
-    category: 'Web · Upcoming',
-    description:
-      'A tool that takes a user-uploaded clip plus a trending reference video and automatically edits the upload to match the trend style.',
-    image: '/assets/portfolioImg(new).png',
-    techTags: ['React', 'Vite', 'AI/ML'],
-    links: [],
-    note: 'In planning',
   },
 ]
 
@@ -114,7 +83,7 @@ function Projects() {
   }
 
   return (
-    <section id="projects" className="section section--dark" ref={sectionRef}>
+    <section id="projects" className="section" ref={sectionRef}>
       <GhostNumber value="02" speed={0.22} />
       <div className="grid">
         <div className="section-header">
@@ -165,7 +134,7 @@ function Projects() {
                             </a>
                           ))}
                           {project.note && (
-                            <span style={{ fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--muted-on-dark)' }}>
+                            <span style={{ fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
                               {project.note}
                             </span>
                           )}

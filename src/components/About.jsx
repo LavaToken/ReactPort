@@ -11,7 +11,7 @@ function About() {
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ About ]</span>
-          <span className="section-header__index">001 / 005</span>
+          <span className="section-header__index">001 / 004</span>
         </div>
 
         <div className="about__copy reveal">
@@ -21,31 +21,32 @@ function About() {
           <div className="about__body">
             <p>
               I'm a Computer Science student at UC Davis with a focus
-              on full-stack development, data analytics, and building
-              products people actually use. I care about the intersection
-              of engineering and growth management — writing clean code that ships
+              on growth engineering, data analytics, and building
+              products people actually use, most recently Data Analytics 
+              Intern at Travis Credit Union. I care about the intersection
+              of engineering and consumer behavior: writing code that ships
               and measuring what happens after.
             </p>
             <p>
               Outside of engineering, I run marketing and content for
               Google Developer Student Club, shoot street and documentary
-              photography, and build mechanical keyboards. I like making
+              photography/videography, and build mechanical keyboards. I like making
               things — digital and physical.
             </p>
           </div>
         </div>
 
         <div className="about__photo reveal">
-          <img src="/assets/profilepic.png" alt="Kevin Jia portrait" />
+          <img src="/assets/profilepic.jpg" alt="Kevin Jia portrait" />
         </div>
 
         <div className="about__stats reveal">
           <div className="about__stat">
             <span className="about__stat-value">3rd</span>
-            <span className="about__stat-label">Year — UC Davis CE</span>
+            <span className="about__stat-label">Year — UC Davis CS</span>
           </div>
           <div className="about__stat">
-            <span className="about__stat-value">8+</span>
+            <span className="about__stat-value">5</span>
             <span className="about__stat-label">Shipped projects</span>
           </div>
           <div className="about__stat">

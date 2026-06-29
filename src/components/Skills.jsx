@@ -5,11 +5,11 @@ import GhostNumber from './GhostNumber'
 const skillRows = [
   {
     label: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'C', 'C++', 'Verilog'],
+    items: ['TypeScript', 'JavaScript', 'Python'],
   },
   {
     label: 'Frameworks',
-    items: ['React', 'React Native', 'Vite', 'Node.js', 'Express'],
+    items: ['React', 'Next.js', 'React Native', 'Node.js', 'Express'],
   },
   {
     label: 'Data',
@@ -17,11 +17,11 @@ const skillRows = [
   },
   {
     label: 'Infra',
-    items: ['Firebase', 'Docker', 'Git'],
+    items: ['Vercel', 'Firebase', 'Docker', 'Git'],
   },
   {
     label: 'Growth',
-    items: ['Content Strategy', 'SEO Basics', 'Funnel Analysis'],
+    items: ['Funnel Analysis', 'Retention Curves', 'Cohort Analysis', 'CAC/LTV'],
   },
   {
     label: 'APIs',
@@ -34,11 +34,11 @@ function Skills() {
 
   return (
     <section id="skills" className="section" ref={sectionRef}>
-      <GhostNumber value="04" speed={0.22} />
+      <GhostNumber value="03" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Stack ]</span>
-          <span className="section-header__index">004 / 005</span>
+          <span className="section-header__index">003 / 004</span>
         </div>
 
         <div className="skills__list reveal">
