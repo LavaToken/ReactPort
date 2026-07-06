@@ -6,7 +6,6 @@ import Header from './components/Header'
 import SideNav from './components/SideNav'
 import Hero from './components/Hero'
 import About from './components/About'
-import Creative from './components/Creative'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -37,7 +36,6 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Creative />
         <Skills />
         <Contact />
       </main>

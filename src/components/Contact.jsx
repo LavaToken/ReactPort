@@ -11,11 +11,11 @@ function Contact() {
 
   return (
     <section id="contact" className="section" ref={sectionRef}>
-      <GhostNumber value="04" speed={0.22} />
+      <GhostNumber value="03" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Contact ]</span>
-          <span className="section-header__index">004 / 004</span>
+          <span className="section-header__index">003 / 003</span>
         </div>
 
         <div className="contact__inner reveal">

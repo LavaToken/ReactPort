@@ -34,11 +34,11 @@ function Skills() {
 
   return (
     <section id="skills" className="section" ref={sectionRef}>
-      <GhostNumber value="03" speed={0.22} />
+      <GhostNumber value="02" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Stack ]</span>
-          <span className="section-header__index">003 / 004</span>
+          <span className="section-header__index">002 / 003</span>
         </div>
 
         <div className="skills__list reveal">

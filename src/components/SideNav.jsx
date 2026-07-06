@@ -3,12 +3,11 @@ import { Link, useLocation } from 'react-router-dom'
 
 const NAV_ITEMS = [
   { id: 'about', label: 'About', to: '/#about' },
-  { id: 'creative', label: 'Creative', to: '/#creative' },
   { id: 'skills', label: 'Skills', to: '/#skills' },
   { id: 'contact', label: 'Contact', to: '/#contact' },
 ]
 
-const HOME_SECTION_IDS = ['about', 'creative', 'skills', 'contact']
+const HOME_SECTION_IDS = ['about', 'skills', 'contact']
 
 function SideNav() {
   const location = useLocation()
@@ -16,26 +15,15 @@ function SideNav() {
   const isHomePage = location.pathname === '/'
   const [active, setActive] = useState(null)
   const [visible, setVisible] = useState(false)
-  const [onDark, setOnDark] = useState(false)
-
   useEffect(() => {
     if (isWorkPage) {
       setVisible(true)
-      setOnDark(false)
       return undefined
     }
 
     const handleScroll = () => {
       const hero = document.querySelector('.hero')
       if (hero) setVisible(window.scrollY > hero.offsetHeight * 0.6)
-
-      const creative = document.getElementById('creative')
-      if (creative) {
-        const rect = creative.getBoundingClientRect()
-        setOnDark(rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2)
-      } else {
-        setOnDark(false)
-      }
     }
 
     handleScroll()
@@ -65,7 +53,7 @@ function SideNav() {
 
   return (
     <nav
-      className={`side-nav${visible ? ' is-visible' : ''}${onDark ? ' on-dark' : ''}`}
+      className={`side-nav${visible ? ' is-visible' : ''}`}
       aria-label="Section navigation"
     >
       {NAV_ITEMS.map((item) => (
