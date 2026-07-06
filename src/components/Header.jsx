@@ -6,6 +6,8 @@ const LINKS = [
   { to: '/work', label: 'Projects' },
   { to: '/#skills', label: 'Skills' },
   { to: '/#contact', label: 'Contact' },
+  { to: '/photography', label: 'Photography' },
+  { to: '/video', label: 'Video' },
 ]
 
 function Header() {

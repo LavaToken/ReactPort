@@ -84,11 +84,11 @@ function Projects() {
 
   return (
     <section id="projects" className="section" ref={sectionRef}>
-      <GhostNumber value="01" speed={0.22} />
+      <GhostNumber value="02" speed={0.22} />
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ Selected Work ]</span>
-          <span className="section-header__index">001 / 001</span>
+          <span className="section-header__index">002 / 005</span>
         </div>
 
         <div className="projects__list reveal">

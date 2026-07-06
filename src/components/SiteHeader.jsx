@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const RESUME_URL =
@@ -13,11 +13,34 @@ function formatClock(date) {
 
 function SiteHeader() {
   const [time, setTime] = useState(() => formatClock(new Date()))
+  const [hobbiesOpen, setHobbiesOpen] = useState(false)
+  const hobbiesRef = useRef(null)
 
   useEffect(() => {
     const id = setInterval(() => setTime(formatClock(new Date())), 1000)
     return () => clearInterval(id)
   }, [])
+
+  useEffect(() => {
+    if (!hobbiesOpen) return undefined
+
+    const handlePointerDown = (event) => {
+      if (!hobbiesRef.current?.contains(event.target)) {
+        setHobbiesOpen(false)
+      }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setHobbiesOpen(false)
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [hobbiesOpen])
 
   const tz = 'San Francisco'
 
@@ -37,9 +60,38 @@ function SiteHeader() {
         <Link className="meta-strip__link" to="/work">
           Projects →
         </Link>
-        <Link className="meta-strip__link" to="/photography">
-          Photography →
-        </Link>
+        <div
+          className={`meta-strip__dropdown${hobbiesOpen ? ' is-open' : ''}`}
+          ref={hobbiesRef}
+        >
+          <button
+            type="button"
+            className="meta-strip__link meta-strip__dropdown-trigger"
+            aria-expanded={hobbiesOpen}
+            aria-haspopup="true"
+            onClick={() => setHobbiesOpen((open) => !open)}
+          >
+            Hobbies →
+          </button>
+          <div className="meta-strip__dropdown-menu" role="menu">
+            <Link
+              className="meta-strip__dropdown-item"
+              to="/photography"
+              role="menuitem"
+              onClick={() => setHobbiesOpen(false)}
+            >
+              Photography
+            </Link>
+            <Link
+              className="meta-strip__dropdown-item"
+              to="/video"
+              role="menuitem"
+              onClick={() => setHobbiesOpen(false)}
+            >
+              Video
+            </Link>
+          </div>
+        </div>
         <span className="meta-strip__clock">
           {tz} · {time}
         </span>

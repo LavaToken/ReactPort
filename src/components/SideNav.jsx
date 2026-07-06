@@ -15,6 +15,7 @@ function SideNav() {
   const isHomePage = location.pathname === '/'
   const [active, setActive] = useState(null)
   const [visible, setVisible] = useState(false)
+
   useEffect(() => {
     if (isWorkPage) {
       setVisible(true)

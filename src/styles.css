@@ -170,11 +170,61 @@ body {
   gap: 1.5rem;
 }
 .meta-strip__link {
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity var(--t-fast) ease;
+}
+.meta-strip__link:hover { opacity: 0.65; }
+.meta-strip__dropdown {
+  position: relative;
+}
+.meta-strip__dropdown-trigger {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.meta-strip__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition:
+    opacity var(--t-fast) ease,
+    transform var(--t-fast) ease,
+    visibility var(--t-fast) ease;
+  z-index: 110;
+}
+.meta-strip__dropdown.is-open .meta-strip__dropdown-menu,
+.meta-strip__dropdown:hover .meta-strip__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.meta-strip__dropdown-item {
+  display: block;
+  padding: 0.45rem 1rem;
   color: var(--text-muted);
   text-decoration: none;
-  transition: color var(--t-fast) ease;
+  white-space: nowrap;
+  transition: color var(--t-fast) ease, background var(--t-fast) ease;
 }
-.meta-strip__link:hover { color: var(--text); }
+.meta-strip__dropdown-item:hover {
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.03);
+}
 .meta-strip__clock {
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
@@ -985,6 +1035,144 @@ main { padding-top: var(--strip-h); }
 }
 .photo-page .react-photo-album--photo:hover img {
   opacity: 0.85;
+}
+
+/* =========================================================
+   Video page (/video)
+   ========================================================= */
+.video-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  padding-top: var(--strip-h);
+}
+
+.video-page__bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--strip-h);
+  padding: 0 var(--pad-x);
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border-dark);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.video-page__back {
+  color: var(--muted-on-dark);
+  text-decoration: none;
+  transition: color var(--t-fast) ease;
+}
+.video-page__back:hover { color: var(--text-on-dark); }
+
+.video-page__title {
+  color: var(--text-on-dark);
+  letter-spacing: 0.18em;
+}
+
+.video-page__spacer {
+  min-width: 3ch;
+}
+
+.video-page__body {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem var(--pad-x);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+  align-content: center;
+  align-items: center;
+}
+
+.video-page__copy {
+  grid-column: 1 / span 4;
+}
+
+.video-page__embed {
+  grid-column: 6 / span 7;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-dark);
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+}
+
+.video-page__embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-page__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.video-page__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--muted-on-dark);
+  margin-bottom: 2rem;
+}
+
+.video-page__caption {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-on-dark);
+  max-width: 60ch;
+  white-space: pre-line;
+}
+
+@media (max-width: 900px) {
+  .video-page__copy  { grid-column: 1 / -1; margin-bottom: 2.5rem; }
+  .video-page__embed { grid-column: 1 / -1; }
+}
+
+/* =========================================================
+   Page transitions
+   ========================================================= */
+.page-transition {
+  min-height: 100vh;
+}
+
+.page-transition--out {
+  animation: page-out var(--t-base) var(--ease) forwards;
+  pointer-events: none;
+}
+
+.page-transition--in {
+  animation: page-in var(--t-base) var(--ease) forwards;
+}
+
+@keyframes page-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* =========================================================
