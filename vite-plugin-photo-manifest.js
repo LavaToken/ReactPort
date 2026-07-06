@@ -14,6 +14,27 @@ const IMAGE_EXTENSIONS = new Set([
  *    (so 10 comes after 9, not after 1)
  *  - everything else is appended afterwards, sorted alphabetically
  */
+function preferWebpFiles(files) {
+  const byBase = new Map()
+
+  for (const file of files) {
+    const base = basename(file, extname(file)).toLowerCase()
+    const ext = extname(file).toLowerCase()
+    const existing = byBase.get(base)
+
+    if (!existing) {
+      byBase.set(base, file)
+      continue
+    }
+
+    if (ext === '.webp' && extname(existing).toLowerCase() !== '.webp') {
+      byBase.set(base, file)
+    }
+  }
+
+  return [...byBase.values()]
+}
+
 function sortPhotoFiles(files) {
   const numeric = []
   const other = []
@@ -40,8 +61,10 @@ function buildManifest(root) {
     mkdirSync(dir, { recursive: true })
   }
 
-  const files = readdirSync(dir).filter((file) =>
-    IMAGE_EXTENSIONS.has(extname(file).toLowerCase()),
+  const files = preferWebpFiles(
+    readdirSync(dir).filter((file) =>
+      IMAGE_EXTENSIONS.has(extname(file).toLowerCase()),
+    ),
   )
 
   const photos = []
