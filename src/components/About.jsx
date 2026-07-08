@@ -11,7 +11,7 @@ function About() {
       <div className="grid">
         <div className="section-header">
           <span className="section-header__label">[ About ]</span>
-          <span className="section-header__index">001 / 003</span>
+          <span className="section-header__index">001 / 002</span>
         </div>
 
         <div className="about__copy reveal">
@@ -26,6 +26,9 @@ function About() {
               a financial institution that member-owned cooperative built to serve people instead of shareholders. 
               I care about the intersection of engineering and consumer behavior: writing code that ships
               and measuring what happens after.
+            </p>
+            <p>
+              Currently, I'm building <span className="about__product">beaq</span>, reimagining how individuals make real friends, not just matches.
             </p>
             <p>
               Outside of engineering, I run marketing and content for

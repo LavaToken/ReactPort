@@ -3,11 +3,10 @@ import { Link, useLocation } from 'react-router-dom'
 
 const NAV_ITEMS = [
   { id: 'about', label: 'About', to: '/#about' },
-  { id: 'skills', label: 'Skills', to: '/#skills' },
   { id: 'contact', label: 'Contact', to: '/#contact' },
 ]
 
-const HOME_SECTION_IDS = ['about', 'skills', 'contact']
+const HOME_SECTION_IDS = ['about', 'contact']
 
 function SideNav() {
   const location = useLocation()
