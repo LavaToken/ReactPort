@@ -78,7 +78,7 @@ function Hero() {
           UC Davis · Class of 2027
         </div>
 
-        <p className="hero__pitch">Currently building Beaq</p>
+        <p className="hero__pitch">Currently building <span className="about__product">beaq</span>: reimagining how individuals make real friends</p>
       </div>
     </section>
   )

@@ -25,10 +25,7 @@ function About() {
               Most recently, I worked as a Data Analytics Intern at Travis Credit Union, 
               a financial institution that member-owned cooperative built to serve people instead of shareholders. 
               I care about the intersection of engineering and consumer behavior: writing code that ships
-              and measuring what happens after.
-            </p>
-            <p>
-              Currently, I'm building <span className="about__product">beaq</span>, reimagining how individuals make real friends, not just matches.
+              and measuring the results.
             </p>
             <p>
               Outside of engineering, I run marketing and content for
