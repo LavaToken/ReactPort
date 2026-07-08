@@ -21,10 +21,10 @@ function About() {
           <div className="about__body">
             <p>
               I'm a Computer Science student at UC Davis with a focus
-              on growth engineering, data analytics, and building
-              products people actually use, most recently Data Analytics 
-              Intern at Travis Credit Union. I care about the intersection
-              of engineering and consumer behavior: writing code that ships
+              on growth and building products people actually use. 
+              Most recently, I worked as a Data Analytics Intern at Travis Credit Union, 
+              a financial institution that member-owned cooperative built to serve people instead of shareholders. 
+              I care about the intersection of engineering and consumer behavior: writing code that ships
               and measuring what happens after.
             </p>
             <p>
