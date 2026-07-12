@@ -8,7 +8,7 @@ const projects = [
     year: '2025',
     category: 'Hackathon · Climate',
     description:
-      "A website built for homeowners that tracks current and historical climate, disaster, and geographical data for any location and generates a detailed report on danger levels and preventative measures. Uses the OpenAI API for narrative reports. (API calls are currently inactive.)",
+      "A website built at HackDavis 2025 for homeowners that tracks current and historical climate, disaster, and geographical data for any location and generates a detailed report on danger levels and preventative measures. Uses the OpenAI API for narrative reports. (API calls are currently inactive due to costs.)",
     image: '/assets/ClimateAwareImg.png',
     techTags: ['TypeScript', 'React', 'Firebase', 'OpenAI', 'Earth Engine'],
     links: [
@@ -17,28 +17,15 @@ const projects = [
     ],
   },
   {
-    title: 'LLM on Trolley Problems',
-    year: '2025',
-    category: 'Data Analytics · Ethical AI',
+    title: 'Tracker Ledger',
+    year: '2026',
+    category: 'Hackathon · Browser Extension',
     description:
-      "A research tool comparing how GPT, Claude, and Grok navigate ethical dilemmas — running all three models in parallel across 34 standardized trolley-problem scenarios. Built a 5-axis scoring system to score responses on ethical reasoning, generating 170+ structured data points for bias analysis. Full-stack pipeline (React + Node/Express) handles prompt orchestration, structured JSON output, and data export.",
-    image: '/assets/trolleyProblemImg.png',
-    techTags: ['React', 'Node.js', 'Express', 'GPT', 'Claude', 'Grok'],
+      "A Chrome extension built at Imbue's Punk Software Hackathon, that scores any webpage's privacy footprint by detecting third-party trackers, fingerprinting scripts, and cookies in real time. Runs entirely client-side with a hand-curated tracker dataset and a transparent, itemized scoring breakdown.",
+    image: '/assets/trackerledger.png',
+    techTags: ['JavaScript', 'Chrome Extension', 'Manifest V3', 'Service Workers'],
     links: [
-      { url: 'PLACEHOLDER', label: 'Source' },
-    ],
-  },
-  {
-    title: 'Steganography Web App',
-    year: '2024',
-    category: 'Full-Stack Web',
-    description:
-      'A website that hides messages inside images using steganography. Users upload an image and a message, get back a downloadable encoded image, and can extract messages from encoded uploads later.',
-    image: '/assets/steganography-frontpage.png',
-    techTags: ['TypeScript', 'React', 'Node.js', 'Express', 'PostgreSQL'],
-    links: [
-      { url: 'https://steganography-delta.vercel.app/', label: 'Live' },
-      { url: 'https://github.com/LavaToken/Steganography', label: 'Source' },
+      { url: 'https://github.com/LavaToken/tracker-ledger', label: 'Source' },
     ],
   },
   {
@@ -51,6 +38,18 @@ const projects = [
     techTags: ['TypeScript', 'React Native', 'Firebase', 'OpenAI', 'UI/UX'],
     links: [
       { url: 'https://github.com/LavaToken/FriendTracker', label: 'Source' },
+    ],
+  },
+  {
+    title: 'LLM on Trolley Problems',
+    year: '2025',
+    category: 'Data Analytics · Ethical AI',
+    description:
+      "A research tool comparing how GPT, Claude, and Grok navigate ethical dilemmas — running all three models in parallel across 34 standardized trolley-problem scenarios. Built a 5-axis scoring system to score responses on ethical reasoning, generating 170+ structured data points for bias analysis. Full-stack pipeline (React + Node/Express) handles prompt orchestration, structured JSON output, and data export.",
+    image: '/assets/trolleyProblemImg.png',
+    techTags: ['React', 'Node.js', 'Express', 'GPT', 'Claude', 'Grok'],
+    links: [
+      { url: 'PLACEHOLDER', label: 'Source' },
     ],
   },
   {
