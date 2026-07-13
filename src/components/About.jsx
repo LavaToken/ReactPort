@@ -23,15 +23,14 @@ function About() {
               I'm a Computer Science student at UC Davis with a focus
               on growth and building products people actually use. 
               Most recently, I worked as a Data Analytics Intern at Travis Credit Union, 
-              a financial institution that member-owned cooperative built to serve people instead of shareholders. 
+              a member-owned financial institution built to serve people instead of shareholders. 
               I care about the intersection of engineering and consumer behavior: writing code that ships
               and measuring the results.
             </p>
             <p>
               Outside of engineering, I run marketing and content for
               Google Developer Student Club, shoot street and documentary
-              photography/videography, and build mechanical keyboards. I like making
-              things — digital and physical.
+              photography/videography, and build mechanical keyboards. 
             </p>
           </div>
         </div>
